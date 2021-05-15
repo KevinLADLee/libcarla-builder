@@ -31,3 +31,5 @@ make setup
 pushd Examples/CppClient > /dev/null
 
 make build_libcarla
+
+tar -czvf libcarla-install.tar.gz libcarla-install
