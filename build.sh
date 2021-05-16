@@ -33,4 +33,29 @@ pushd Examples/CppClient > /dev/null
 
 make build_libcarla
 
+echo "Generate cmake file..."
+cat > libcarla-install/LibCarlaClient.cmake << EOL
+find_package(JPEG REQUIRED)
+find_package(TIFF REQUIRED)
+
+include_directories(
+        \${LIBCARLA_INSTALL_DIR}/include
+        SYSTEM PUBLIC
+        \${LIBCARLA_INSTALL_DIR}/include/system
+)
+
+link_directories(\${LIBCARLA_INSTALL_DIR}/lib)
+link_libraries(
+        carla_client
+        boost_filesystem
+        rpc
+        png
+        Recast
+        Detour
+        DetourCrowd
+        \${JPEG_LIBRARY}
+        \${TIFF_LIBRARY}
+)
+EOL
+
 tar -czvf libcarla-install.tar.gz libcarla-install
