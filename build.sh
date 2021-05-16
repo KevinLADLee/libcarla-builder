@@ -25,6 +25,7 @@ sed -i "s@g++-7@g++@g" Examples/CppClient/Makefile
 sed -i "s@-Werror@@g" Examples/CppClient/Makefile 
 
 sed -i 's/b2/& link=static/' Util/BuildTools/Setup.sh
+sed -i 's/configure/& LDFLAGS="-static"/' Util/BuildTools/Setup.sh
 
 make setup
 
