@@ -31,13 +31,15 @@ if [[ $FLAG_SUSTECH == true ]]; then
     if [[ $i == $CARLA_VERSION ]]; then
       FLAG_SUSTECH_SUPPORT=true 
     fi
-  done  
+  done
+
+  if [[ $FLAG_SUSTECH_SUPPORT == false ]]; then
+    echo -e "\033[31mUnsupported CARLA version \033[0m"
+    exit -2
+  fi
+  
 fi
 
-if [[ $FLAG_SUSTECH_SUPPORT == false ]]; then
-  echo -e "\033[31mUnsupported CARLA version \033[0m"
-  exit -2
-fi
 
 # Show arguments
 echo  -e "\033[33mSUSTech Flag => $FLAG_SUSTECH \033[0m"
