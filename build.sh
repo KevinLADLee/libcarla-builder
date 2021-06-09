@@ -6,7 +6,7 @@ set -u
 CARLA_VERSION=0.9.11
 CARLA_REPO=https://github.com/carla-simulator/carla
 CARLA_REPO_SUSTECH=https://gitlab.isus.tech/carla-simulator/carla
-CARLA_SETUP_PATCH_SUSTECH=https://gitlab.isus.tech/carla-on-cloud/sustech-turbo-boost/-/raw/master/${CARLA_VERSION}/libcarla-setup.patch
+CARLA_SETUP_PATCH_SUSTECH=https://gitlab.isus.tech/carla1s/sustech-booster/-/raw/master/carla/${CARLA_VERSION}/libcarla-setup.patch
 FLAG_SUSTECH=false
 FLAG_SUSTECH_SUPPORT=false
 SUSTECH_SUPPORT_LIST="0.9.11"  
